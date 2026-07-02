@@ -1,0 +1,14 @@
+[Unit]
+Description=Lunar AI Moderation Bot
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/root/lunarbot
+ExecStart=/usr/bin/python3 /root/lunarbot/bot.py
+Restart=on-failure
+RestartSec=5
+EnvironmentFile=/root/lunarbot/.env
+
+[Install]
+WantedBy=multi-user.target
